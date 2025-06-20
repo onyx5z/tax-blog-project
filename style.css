@@ -1,200 +1,242 @@
 /* --- CSS Variables for Easy Themeing --- */
 :root {
-    --primary-color: #005A9C; /* A professional, trustworthy blue */
-    --text-color: #333333; /* Dark grey for readability, softer than pure black */
-    --meta-text-color: #777777; /* Lighter grey for less important text */
-    --background-color: #fdfdfd; /* A very light grey, softer than pure white */
-    --border-color: #eeeeee;
-    --font-main: 'Lato', sans-serif;
+  /* Color Palette - Light Mode */
+  --primary-color: #005A9C;
+  --text-color: #1f2937; /* A darker, richer gray */
+  --text-color-light: #4b5563; /* For meta text */
+  --background-color: #f4f4f5; /* Light neutral background */
+  --border-color: #e5e7eb;
+  --link-decoration-color: #9ca3af;
+  --code-background: #f9fafb;
+  --code-border: #e5e7eb;
+
+  /* Syntax Highlighting - Light Mode */
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-property: #e25a1c;
+}
+
+/* --- AUTOMATIC DARK MODE --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Color Palette - Dark Mode */
+    --primary-color: #4c97f8;
+    --text-color: #f4f4f5; /* Light text on dark background */
+    --text-color-light: #9ca3af;
+    --background-color: #111827; /* Dark background */
+    --border-color: #374151;
+    --link-decoration-color: #4b5563;
+    --code-background: #1f2937;
+    --code-border: #374151;
+
+    /* Syntax Highlighting - Dark Mode */
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+    --sh-comment: #a19595;
+    --sh-property: #e25a1c;
+  }
 }
 
 /* --- Global Resets & Body Styles --- */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #f4f4f5;
 }
 
 body {
-    font-family: var(--font-main);
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    font-size: 1.1rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 /* --- Layout Container --- */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.3;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2rem; }
-p { margin-bottom: 1.25em; }
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #003f6f;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* --- Header & Navigation --- */
 .site-header {
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 30px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 30px;
 }
 
 .site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
 }
 .site-title:hover {
-    text-decoration: none;
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .site-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
 }
 
 .site-nav li {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 .site-nav a {
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 700;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav a:hover, .site-nav a.active {
+  color: var(--primary-color);
 }
 
 
-/* --- Main Content & Post Styling --- */
+/* --- General Typography & Content Styling --- */
+p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-color: var(--link-decoration-color);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 0.1em;
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  text-decoration-color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; /* Medium weight, not bold */
+  letter-spacing: -0.025em; /* tracking-tight */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.25rem; } /* text-4xl */
+h2 { font-size: 1.5rem; } /* text-2xl */
+h3 { font-size: 1.25rem; } /* text-xl */
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem; /* pl-6 */
+}
+ol {
+  list-style: decimal;
+  padding-left: 1.5rem; /* pl-6 */
+}
+strong {
+  font-weight: 600; /* Semibold */
+}
+
+/* --- POST-SPECIFIC STYLES --- */
 .post-header {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .post-header h1, .post-header h2 {
-    margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .post-meta {
-    font-size: 0.9rem;
-    color: var(--meta-text-color);
-    margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+  margin: 0;
 }
 
-.post-content ul, .post-content ol {
-    padding-left: 30px;
+/* --- CODE BLOCK STYLING --- */
+.post-content pre {
+  background-color: var(--code-background);
+  border: 1px solid var(--code-border);
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.5;
 }
-
-.post-content li {
-    margin-bottom: 10px;
+/* For inline code snippets */
+.post-content code {
+  background-color: var(--code-background);
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 2px 6px;
+  font-size: 0.9em;
 }
-
-blockquote {
-    border-left: 4px solid var(--primary-color);
-    padding-left: 20px;
-    margin: 40px 0;
-    font-style: italic;
-    color: var(--meta-text-color);
-    font-size: 1.2rem;
+/* Reset padding for code inside a pre block */
+.post-content pre code {
+  padding: 0;
+  background-color: transparent;
 }
+/* Syntax Highlighting Span Colors */
+.post-content code .sh-class { color: var(--sh-class); }
+.post-content code .sh-identifier { color: var(--sh-identifier); }
+.post-content code .sh-sign { color: var(--sh-sign); }
+.post-content code .sh-string { color: var(--sh-string); }
+.post-content code .sh-keyword { color: var(--sh-keyword); }
+.post-content code .sh-comment { color: var(--sh-comment); }
+.post-content code .sh-property { color: var(--sh-property); }
 
 /* --- Footer --- */
 .site-footer {
-    text-align: center;
-    margin-top: 60px;
-    padding: 30px 0;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    color: var(--meta-text-color);
+  text-align: center;
+  margin-top: 60px;
+  padding: 30px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-color-light);
 }
 
 .site-footer p {
-    margin: 0 0 5px 0;
+  margin: 0 0 5px 0;
 }
 
 /* --- STYLES for Article Lists --- */
 .post-list .list-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 0;
 }
-
 .post-list .list-item:first-child {
-    padding-top: 0;
+  padding-top: 0;
 }
-
 .post-list .list-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
-
 .post-list h2 {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
-
 .post-list h2 a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
-
 .post-list h2 a:hover {
-    color: var(--primary-color);
-}
-
-
-/* --- Responsive Design --- */
-@media (max-width: 650px) {
-    body {
-        font-size: 1rem;
-    }
-
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.7rem; }
-
-    /*
-     * THE CHANGE IS HERE!
-     * The following rules that stacked the header have been REMOVED:
-     *
-     * .site-header .container { flex-direction: column; }
-     * .site-title { margin-bottom: 20px; }
-     *
-     * By removing them, the header will stay in a row on all screen sizes.
-    */
-    
-    .site-nav ul {
-        padding: 0;
-    }
-
-    /* We can also reduce the space between nav items on mobile */
-    .site-nav li {
-        margin-left: 15px;
-    }
+  color: var(--primary-color);
 }
