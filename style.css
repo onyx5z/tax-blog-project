@@ -54,9 +54,9 @@ a:hover {
 
 /* --- Header & Navigation --- */
 .site-header {
-    padding: 20px 0;
+    padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .site-header .container {
