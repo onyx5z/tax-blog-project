@@ -136,8 +136,8 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700; /* Medium weight, not bold */
   letter-spacing: -0.015em; /* tracking-tight */
-  margin-top: 1.3em;
-  margin-bottom: 0.4em;
+  margin-top: 1.1em;
+  margin-bottom: 0.2em;
 }
 
 h1 { font-size: 2.25rem; } /* text-4xl */
