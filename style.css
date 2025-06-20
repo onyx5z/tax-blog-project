@@ -1,45 +1,197 @@
-/* Add these new rules to your existing style.css file */
-
-.page-intro {
-    text-align: center;
-    padding: 30px 0;
-    margin-bottom: 30px;
+/* --- CSS Variables for Easy Themeing --- */
+:root {
+    --primary-color: #005A9C; /* A professional, trustworthy blue */
+    --text-color: #333333; /* Dark grey for readability, softer than pure black */
+    --meta-text-color: #777777; /* Lighter grey for less important text */
+    --background-color: #fdfdfd; /* A very light grey, softer than pure white */
+    --border-color: #eeeeee;
+    --font-main: 'Lato', sans-serif;
 }
 
-.page-intro h1 {
-    margin-top: 0;
+/* --- Global Resets & Body Styles --- */
+* {
+    box-sizing: border-box;
 }
 
-.section-heading {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
+body {
+    font-family: var(--font-main);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* --- Layout Container --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+p { margin-bottom: 1.25em; }
+
+a {
     color: var(--primary-color);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
+a:hover {
+    text-decoration: underline;
+    color: #003f6f;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.site-title:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.site-nav li {
+    margin-left: 25px;
+}
+
+.site-nav a {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* --- Main Content & Post Styling --- */
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    margin: 0 0 10px 0;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--meta-text-color);
+    margin: 0;
+}
+
+.post-content ul, .post-content ol {
+    padding-left: 30px;
+}
+
+.post-content li {
+    margin-bottom: 10px;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 40px 0;
+    font-style: italic;
+    color: var(--meta-text-color);
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--meta-text-color);
+}
+
+.site-footer p {
+    margin: 0 0 5px 0;
+}
+
+/* --- NEW STYLES for Article Lists --- */
 .post-list .list-item {
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.post-list .list-item:first-child {
+    padding-top: 0;
 }
 
 .post-list .list-item:last-child {
     border-bottom: none;
 }
 
-.post-list h3 {
+.post-list h2 {
+    font-size: 1.8rem;
     margin-top: 0;
     margin-bottom: 5px;
 }
 
-.post-list h3 a {
+.post-list h2 a {
     color: var(--text-color);
+    text-decoration: none;
 }
 
-.post-list h3 a:hover {
+.post-list h2 a:hover {
     color: var(--primary-color);
-    text-decoration: none;
+}
+/* End of New Styles */
+
+
+/* --- Responsive Design --- */
+@media (max-width: 650px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; }
+
+    .site-header .container {
+        flex-direction: column;
+    }
+
+    .site-title {
+        margin-bottom: 20px;
+    }
+    
+    .site-nav ul {
+        padding: 0;
+    }
+
+    .site-nav li {
+        margin: 0 10px;
+    }
 }
