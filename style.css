@@ -134,10 +134,10 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500; /* Medium weight, not bold */
-  letter-spacing: -0.025em; /* tracking-tight */
-  margin-top: 0;
-  margin-bottom: 2.5em;
+  font-weight: 700; /* Medium weight, not bold */
+  letter-spacing: -0.015em; /* tracking-tight */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 h1 { font-size: 2.25rem; } /* text-4xl */
@@ -158,7 +158,7 @@ strong {
 
 /* --- POST-SPECIFIC STYLES --- */
 .post-header {
-  text-align: lefft;
+  text-align: left;
   margin-bottom: 30px;
 }
 
