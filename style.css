@@ -116,7 +116,7 @@ body {
 
 /* --- General Typography & Content Styling --- */
 p {
-  margin-top: 1.25em;
+  margin-top: 0;
   margin-bottom: 1.25em;
   color: var(--text-color);
 }
@@ -134,7 +134,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500; /* Medium weight, not bold */
+  font-weight: 700; /* Medium weight, not bold */
   letter-spacing: -0.025em; /* tracking-tight */
   margin-top: 1.5em;
   margin-bottom: 0.5em;
