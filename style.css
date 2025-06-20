@@ -1,0 +1,45 @@
+/* Add these new rules to your existing style.css file */
+
+.page-intro {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+.page-intro h1 {
+    margin-top: 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-list .list-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.post-list .list-item:last-child {
+    border-bottom: none;
+}
+
+.post-list h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.post-list h3 a {
+    color: var(--text-color);
+}
+
+.post-list h3 a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
